@@ -1,0 +1,324 @@
+/* =========================
+   Tema AgroTrack (verde)
+   Fondo blanco, acentos verde oscuro/claros
+   ========================= */
+:root{
+  --green-dark: #14532d;   /* verde oscuro principal */
+  --green:       #1f6f4a;  /* verde medio */
+  --green-light: #dff5e8;  /* verde claro de fondo */
+  --ink:         #1f2937;  /* texto principal */
+  --muted:       #6b7280;  /* texto secundario */
+  --bg:          #ffffff;  /* fondo (blanco) */
+  --line:        #e5e7eb;  /* bordes suaves */
+  --shadow:      0 1px 2px rgba(0,0,0,.06);
+  --radius:      12px;
+}
+
+/* Reset suave */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img{ max-width: 100%; display: block; }
+
+/* Tipografía y layout base */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: #fff;
+  padding: 22px 24px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow);
+}
+header h1 { margin: 0 0 6px 0; font-size: 28px; letter-spacing: .2px; }
+header p  { margin: 0; opacity: .95; }
+
+/* Navegación / botones */
+nav.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 20px 0;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid var(--green-dark);
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 650;
+  transition: transform .05s ease, filter .2s ease, background .2s ease;
+}
+a.btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+a.btn.outline {
+  background: #fff;
+  color: var(--green-dark);
+  border: 1px solid var(--green-dark);
+}
+a.btn.outline:hover { background: var(--green-light); }
+
+a.btn.active {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+/* Tarjetas / secciones */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+/* Formularios */
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+}
+label { font-weight: 600; color: var(--ink); }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfd6e0;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+}
+textarea { min-height: 120px; resize: vertical; }
+input:focus, textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(31,111,74,.15);
+}
+
+button, .btn-submit {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--green-dark);
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .2s ease, transform .05s ease;
+}
+button:hover, .btn-submit:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+/* Estados / alertas */
+.alert { padding: 10px 12px; border-radius: 10px; }
+.alert.ok    { background: #e9f7ef; border: 1px solid #b8e0c6; color: #155e3b; }
+.alert.error { background: #fdecea; border: 1px solid #f5c2c0; color: #8a1c13; }
+
+/* Listado de consultas */
+pre {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 16px;
+  border-radius: 10px;
+  overflow: auto;
+  border: 1px solid #30363d;
+}
+
+/* Grid de productos (si usas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 12px;
+}
+.grid .card h3{ margin-top: 0; }
+
+/* Footer (opcional) */
+footer{
+  margin: 24px 0 40px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 16px; }
+  header h1  { font-size: 22px; }
+  nav.menu   { gap: 8px; }
+  a.btn      { padding: 8px 12px; }
+}
+/* =========================
+   Tema AgroTrack (verde)
+   Fondo blanco, acentos verde oscuro/claros
+   ========================= */
+:root{
+  --green-dark: #14532d;   /* verde oscuro principal */
+  --green:       #1f6f4a;  /* verde medio */
+  --green-light: #dff5e8;  /* verde claro de fondo */
+  --ink:         #1f2937;  /* texto principal */
+  --muted:       #6b7280;  /* texto secundario */
+  --bg:          #ffffff;  /* fondo (blanco) */
+  --line:        #e5e7eb;  /* bordes suaves */
+  --shadow:      0 1px 2px rgba(0,0,0,.06);
+  --radius:      12px;
+}
+
+/* Reset suave */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img{ max-width: 100%; display: block; }
+
+/* Tipografía y layout base */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.55;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, var(--green-dark), var(--green));
+  color: #fff;
+  padding: 22px 24px;
+  margin-bottom: 8px;
+  box-shadow: var(--shadow);
+}
+header h1 { margin: 0 0 6px 0; font-size: 28px; letter-spacing: .2px; }
+header p  { margin: 0; opacity: .95; }
+
+/* Navegación / botones */
+nav.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 20px 0;
+}
+
+a.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 1px solid var(--green-dark);
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 650;
+  transition: transform .05s ease, filter .2s ease, background .2s ease;
+}
+a.btn:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+a.btn.outline {
+  background: #fff;
+  color: var(--green-dark);
+  border: 1px solid var(--green-dark);
+}
+a.btn.outline:hover { background: var(--green-light); }
+
+a.btn.active {
+  outline: 2px solid var(--green);
+  outline-offset: 1px;
+}
+
+/* Tarjetas / secciones */
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+
+/* Formularios */
+form {
+  display: grid;
+  gap: 12px;
+  max-width: 520px;
+}
+label { font-weight: 600; color: var(--ink); }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cfd6e0;
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+}
+textarea { min-height: 120px; resize: vertical; }
+input:focus, textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(31,111,74,.15);
+}
+
+button, .btn-submit {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--green-dark);
+  background: var(--green-dark);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter .2s ease, transform .05s ease;
+}
+button:hover, .btn-submit:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+/* Estados / alertas */
+.alert { padding: 10px 12px; border-radius: 10px; }
+.alert.ok    { background: #e9f7ef; border: 1px solid #b8e0c6; color: #155e3b; }
+.alert.error { background: #fdecea; border: 1px solid #f5c2c0; color: #8a1c13; }
+
+/* Listado de consultas */
+pre {
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 16px;
+  border-radius: 10px;
+  overflow: auto;
+  border: 1px solid #30363d;
+}
+
+/* Grid de productos (si usas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+  gap: 12px;
+}
+.grid .card h3{ margin-top: 0; }
+
+/* Footer (opcional) */
+footer{
+  margin: 24px 0 40px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .container { padding: 16px; }
+  header h1  { font-size: 22px; }
+  nav.menu   { gap: 8px; }
+  a.btn      { padding: 8px 12px; }
+}

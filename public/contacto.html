@@ -1,19 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contacto</title>
-  </head>
-  <body>
-    <form method="POST" action="/contacto/cargar">
-      <label>Nombre: <input name="nombre" required /></label><br />
-      <label>Email: <input type="email" name="email" required /></label><br />
-      <label>Mensaje:<br /><textarea name="mensaje" required></textarea></label
-      ><br />
-      <button type="submit">Enviar</button>
-    </form>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgroTrack — Contacto</title>
+  <link rel="stylesheet" href="/estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>AgroTrack</h1>
+    <p>Portal interno — MVP</p>
+  </header>
 
-    <p><a href="/contacto/listar">Ver consultas guardadas</a></p>
-  </body>
+  <div class="container">
+    <nav class="menu">
+      <a class="btn" href="/">Inicio</a>
+      <a class="btn" href="/productos">Productos</a>
+      <a class="btn active" href="/contacto">Contacto</a>
+      <a class="btn" href="/login">Login (demo)</a>
+      <a class="btn outline" href="/contacto/listar">Ver consultas</a>
+      <a class="btn outline" href="/api/status">Estado (JSON)</a>
+    </nav>
+
+    <section class="card">
+      <h2>Contacto</h2>
+
+      <form method="POST" action="/contacto/cargar" autocomplete="on">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" required autocomplete="name" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required autocomplete="email" />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" required placeholder="Escribe tu consulta..."></textarea>
+
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+
+      <p style="margin-top:12px;">
+        <a class="btn outline" href="/contacto/listar">Ver consultas guardadas</a>
+      </p>
+    </section>
+  </div>
+</body>
 </html>

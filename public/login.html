@@ -1,16 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iniciar sesion</title>
-  </head>
-  <body>
-    <form method="POST" action="/auth/recuperar">
-      <label>Usuario: <input name="usuario" required /></label><br />
-      <label>Clave: <input type="password" name="clave" required /></label
-      ><br />
-      <button type="submit">Enviar</button>
-    </form>
-  </body>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgroTrack — Iniciar sesión</title>
+  <link rel="stylesheet" href="/estilos.css" />
+</head>
+<body>
+  <header>
+    <h1>AgroTrack</h1>
+    <p>Portal interno — MVP</p>
+  </header>
+
+  <div class="container">
+    <nav class="menu">
+      <a class="btn" href="/">Inicio</a>
+      <a class="btn" href="/productos">Productos</a>
+      <a class="btn" href="/contacto">Contacto</a>
+      <a class="btn active" href="/login">Login (demo)</a>
+      <a class="btn outline" href="/contacto/listar">Ver consultas</a>
+      <a class="btn outline" href="/api/status">Estado (JSON)</a>
+    </nav>
+
+    <section class="card">
+      <h2>Iniciar sesión (demo)</h2>
+      <p class="alert">Esto es una demostración sin seguridad.</p>
+
+      <form method="POST" action="/auth/recuperar" autocomplete="on">
+        <label for="usuario">Usuario</label>
+        <input id="usuario" name="usuario" required autocomplete="username" />
+
+        <label for="clave">Clave</label>
+        <input id="clave" type="password" name="clave" required autocomplete="current-password" />
+
+        <button type="submit" class="btn-submit">Enviar</button>
+      </form>
+
+      <p style="margin-top:12px;">
+        <strong>Credenciales sugeridas:</strong> usuario <code>demo</code>, clave <code>1234</code> (o escribe las que quieras para ver el eco).
+      </p>
+    </section>
+  </div>
+</body>
 </html>

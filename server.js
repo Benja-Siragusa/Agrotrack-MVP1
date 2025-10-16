@@ -6,7 +6,7 @@ const os = require("os");
 
 const PORT = process.env.PORT || 8888;
 
-// --- Utilidades ---
+// MIME
 function getMimeType(ext) {
   const types = {
     ".html": "text/html; charset=utf-8",
@@ -32,7 +32,6 @@ function ensureDataDir() {
   return fs.promises.mkdir(DATA_DIR, { recursive: true });
 }
 
-// --- Servidor ---
 const server = http.createServer(async (req, res) => {
   if (req.method === "POST" && req.url === "/contacto/cargar") {
     try {
@@ -121,7 +120,7 @@ Mensaje: ${mensaje}
       if (user === "demo" && pass === "1234") {
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
         return res.end(
-          '<h2>Bienvenido, demo ✅</h2><a href="/">Ir al inicio</a>'
+          '<h2>Bienvenido, demo </h2><a href="/">Ir al inicio</a>'
         );
       } else {
         res.writeHead(401, { "Content-Type": "text/html; charset=utf-8" });
@@ -179,9 +178,6 @@ Mensaje: ${mensaje}
   else if (pathname === "/productos") pathname = "productos.html";
   else if (pathname === "/contacto") pathname = "contacto.html";
   else if (pathname === "/login") pathname = "login.html";
-  // rutas “tal cual”
-  else if (pathname === "/productos.html") pathname = "productos.html";
-  else if (pathname === "/contacto.html") pathname = "contacto.html";
   else pathname = pathname.replace(/^\/+/, "");
 
   // normaliza y evita traversals

@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AgroTrack — Inicio</title>
   <link rel="stylesheet" href="/estilos.css" />
 </head>
@@ -11,21 +12,20 @@
     <p>Portal interno — MVP</p>
   </header>
 
-  <nav class="menu">
-    <!-- Rutas “bonitas” que tu servidor ya mapea -->
-    <a class="btn" href="/">Inicio</a>
-    <a class="btn" href="/productos">Productos</a>
-    <a class="btn" href="/contacto">Contacto</a>
-    <a class="btn" href="/login">Login (demo)</a>
+  <div class="container">
+    <nav class="menu">
+      <a class="btn active" href="/">Inicio</a>
+      <a class="btn" href="/productos">Productos</a>
+      <a class="btn" href="/contacto">Contacto</a>
+      <a class="btn" href="/login">Login (demo)</a>
+      <a class="btn outline" href="/contacto/listar">Ver consultas</a>
+      <a class="btn outline" href="/api/status">Estado del servidor (JSON)</a>
+    </nav>
 
-    <!-- Extras útiles -->
-    <a class="btn outline" href="/contacto/listar">Ver consultas</a>
-    <a class="btn outline" href="/api/status">Estado del servidor (JSON)</a>
-  </nav>
-
-  <main>
-    <h2>Bienvenido</h2>
-    <p>Usa los botones de arriba para navegar por el portal.</p>
-  </main>
+    <main class="card">
+      <h2>Bienvenido</h2>
+      <p>Usa el menú superior para navegar por el portal.</p>
+    </main>
+  </div>
 </body>
 </html>

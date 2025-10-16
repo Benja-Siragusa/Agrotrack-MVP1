@@ -1,11 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>productos</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgroTrack — Productos</title>
+  <link rel="stylesheet" href="/estilos.css" />
 </head>
 <body>
-    <h1>productos</h1>
+  <header>
+    <h1>AgroTrack</h1>
+    <p>Portal interno — MVP</p>
+  </header>
+
+  <div class="container">
+    <nav class="menu">
+      <a class="btn" href="/">Inicio</a>
+      <a class="btn active" href="/productos">Productos</a>
+      <a class="btn" href="/contacto">Contacto</a>
+      <a class="btn" href="/login">Login (demo)</a>
+      <a class="btn outline" href="/contacto/listar">Ver consultas</a>
+      <a class="btn outline" href="/api/status">Estado (JSON)</a>
+    </nav>
+
+    <section class="card">
+      <h2>Productos</h2>
+      <p>Listado demostrativo de insumos agroindustriales.</p>
+
+      <!-- Grid de productos sencillo -->
+      <div style="display:grid; grid-template-columns: repeat(auto-fill,minmax(220px,1fr)); gap:12px;">
+        <article class="card">
+          <h3>Fertilizante NPK 20-20-20</h3>
+          <p>Bolsa 25kg • Para cultivos extensivos.</p>
+          <a class="btn outline" href="#">Ver detalle</a>
+        </article>
+
+        <article class="card">
+          <h3>Herbicida Selectivo</h3>
+          <p>Bidón 5L • Control de malezas de hoja ancha.</p>
+          <a class="btn outline" href="#">Ver detalle</a>
+        </article>
+
+        <article class="card">
+          <h3>Semilla Maíz Híbrido</h3>
+          <p>Saco 20kg • Alta productividad y resistencia.</p>
+          <a class="btn outline" href="#">Ver detalle</a>
+        </article>
+
+        <article class="card">
+          <h3>Insecticida de Contacto</h3>
+          <p>Bidón 1L • Amplio espectro.</p>
+          <a class="btn outline" href="#">Ver detalle</a>
+        </article>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
