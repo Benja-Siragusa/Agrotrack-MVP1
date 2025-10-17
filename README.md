@@ -40,6 +40,8 @@ rutas del metodo get
     /login    ->    inicio sesion (demo)    ->    login.html    ->    200/404
     /estilos.css    ->    cargar los estilos en cada pagina    ->    200/404
 
+(404: cualquier ruta no mapeada devuelve HTML “No encontrado” con link a /)
+
 ahora del motodo post
     /contacto/cargar    ->    cargar una consulta a data    ->    html de agradecimiento    ->    200/400/500
     /auth/recuperar    ->    hace un echo de los datos de incio de sesion (demo)    ->    html mostrando credenciales    200/500
@@ -54,4 +56,11 @@ imagen de ejemplo al subir un formulario, haciendo post para cargar los datos en
 ![alt text](<Captura de pantalla (223).png>)
 
 
+    ASINCRONIA
+en el codigo, se usa programacion asincrona para evitar el  bloqueo dele vent loop, los eventos "data","end" y "error" en el objeto req, se manejan mediante callback encapsuladas en una promise, lo que me permitio usar await en las funciones, esto me garantiza que el servidor espera de forma no bloqueante a que se reciba todo el cuerpo de la peticion antes de procesarla, tambien tenemos funciones con metodos como fs.promise.appendFle() y fs.promise.readFile() que tambien devuelven promesas y es asincrono, el event loop sigue ejecutando otras cosas hasta que la funcion trae el archivo
 
+    Cabeceras MIME
+mediante la funcion getMimeType(ext), el servidor identifica automaticamente el contenido de los archivos servidos, permite que el navegador interprete correctamente los archivos, html, css, js y json, no puse mas como imagenes o archivos de otro tipo ya que en este MVP no eran necesarios. en la funcion, cuando se recibe un archivo, con path.extname(filepath) obtenemos su extension y se usa una funcion para establecer el encabezado http
+
+    Manejo de errores
+en el codigo implementamos multiples niveles de manejos de errores, tenemos errores de validacion de formularios por si por ejemplo faltan campos obligatorios por completas, errores de autenticacion en el login (solo de prueba ya que el log in no testea credenciales), y errores internos por si sucede alguna excepcion en algun block try/catch, devuelve un estado 500 y un mensaje de error interno del servidor, por ultimo tenemos un manejo de errores de archivos no encontrados con un estado de codigo 404 y un error ENOENT para cuando el archivo de consultas esta vacio evitar el fallo y mostrar un mensaje de que todavia no hay consultas.
