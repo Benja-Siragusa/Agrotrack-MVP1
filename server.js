@@ -158,7 +158,7 @@ Mensaje: ${mensaje}
     }
   }
 
-  // 2) Rutas GET dinámicas opcionales
+  // Rutas GET dinámicas opcionales
   if (req.method === "GET" && req.url === "/api/status") {
     const data = {
       plataforma: os.platform(),
@@ -174,7 +174,7 @@ Mensaje: ${mensaje}
   let pathname = parsedUrl.pathname || "/";
 
   if (pathname === "/") pathname = "index.html";
-  // rutas “bonitas”
+  // rutas
   else if (pathname === "/productos") pathname = "productos.html";
   else if (pathname === "/contacto") pathname = "contacto.html";
   else if (pathname === "/login") pathname = "login.html";
