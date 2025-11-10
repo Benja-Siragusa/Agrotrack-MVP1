@@ -64,3 +64,6 @@ mediante la funcion getMimeType(ext), el servidor identifica automaticamente el 
 
     Manejo de errores
 en el codigo implementamos multiples niveles de manejos de errores, tenemos errores de validacion de formularios por si por ejemplo faltan campos obligatorios por completas, errores de autenticacion en el login (solo de prueba ya que el log in no testea credenciales), y errores internos por si sucede alguna excepcion en algun block try/catch, devuelve un estado 500 y un mensaje de error interno del servidor, por ultimo tenemos un manejo de errores de archivos no encontrados con un estado de codigo 404 y un error ENOENT para cuando el archivo de consultas esta vacio evitar el fallo y mostrar un mensaje de que todavia no hay consultas.
+
+
+Actividad Obligatoria 2:
